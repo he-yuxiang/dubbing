@@ -1,0 +1,70 @@
+/* pages/user/user.wxss */
+page {
+    background-color: #f6f6f6;
+}
+
+.header {
+    display: flex;
+
+    background-color: #00c06d;
+}
+
+.header image {
+    height: 100rpx;
+    width: 100rpx;
+    border-radius: 24rpx;
+    margin: 24rpx;
+}
+
+.header .user-info {
+    color: #fff;
+    margin-top: 24rpx;
+}
+
+.user-info view {
+    padding-bottom: 8rpx;
+}
+
+.sign-in {
+    margin: 24rpx 0;
+}
+
+.sign-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sign-left {
+    display: flex;
+}
+
+.sign-left .icon-qiandao {
+    color: #4eaf50;
+    margin: 0 24rpx 0 0;
+}
+
+.sign-left .icon-zuanshi_o {
+    color: #7956e8;
+    margin: 0 24rpx 0 0;
+}
+
+.sign-left .icon-duoyuyan {
+    color: #71838b;
+    margin: 0 24rpx 0 0;
+}
+
+.sign-left .icon-taiyang {
+    color: #f0d362;
+    margin: 0 24rpx 0 0;
+}
+
+.sign-left .icon-yinsixieyi {
+    color: #71838b;
+    margin: 0 24rpx 0 0;
+}
+
+.sign-left .icon-zhuxiao {
+    color: #e88769;
+    margin: 0 24rpx 0 0;
+}

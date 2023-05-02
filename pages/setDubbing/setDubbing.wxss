@@ -1,0 +1,25 @@
+/* pages/setDubbing/setDubbing.wxss */
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin: 24rpx 0;
+}
+
+.content .content-left {
+    display: flex;
+    align-items: center;
+}
+
+.content-left i {
+    font-size: 72rpx;
+    margin: 24rpx;
+}
+
+.content .content-right {
+    display: flex;
+    align-items: center;
+}
+
+.content-right i {
+    margin: 24rpx 12rpx;
+}

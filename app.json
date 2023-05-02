@@ -1,0 +1,39 @@
+{
+    "pages": [
+        "pages/setDubbing/setDubbing",
+        "pages/service/service",
+        "pages/index/index",
+        "pages/user/user"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#f6fafa",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#515151",
+        "selectedColor": "#00b972",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "语音合成",
+                "iconPath": "static/images/yuyin.png",
+                "selectedIconPath": "static/images/yuyin1.png"
+            },
+            {
+                "pagePath": "pages/service/service",
+                "text": "服务",
+                "iconPath": "static/images/fuwu.png",
+                "selectedIconPath": "static/images/fuwu1.png"
+            },
+            {
+                "pagePath": "pages/user/user",
+                "text": "我的",
+                "iconPath": "static/images/user.png",
+                "selectedIconPath": "static/images/user1.png"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json"
+}

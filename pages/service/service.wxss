@@ -1,0 +1,26 @@
+/* pages/service/service.wxss */
+.van-grid-item__content--surround:after {
+    border-radius: 40rpx;
+}
+
+.title {
+    color: #5d928b;
+    margin: 24rpx;
+    vertical-align: middle;
+}
+
+.voices-content {
+    display: flex;
+    align-items: center;
+}
+
+.voices-content .iconfont {
+    height: 80rpx;
+    width: 80rpx;
+    font-size: 58rpx;
+    margin: 12rpx;
+    border-radius: 50%;
+    background-color: #d8f7f4;
+    text-align: center;
+    line-height: 80rpx;
+}

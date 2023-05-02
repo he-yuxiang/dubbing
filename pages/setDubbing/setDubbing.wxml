@@ -1,0 +1,57 @@
+<view class="main">
+    <van-tabs animated bind:change="onChange">
+        <van-tab title="{{item.name}}" wx:for="{{voices}}">
+            <view>
+                <view style="margin: 24rpx;">
+                    <van-radio-group value="{{ radio }}" bind:change="onChange" direction="horizontal">
+                        <text>年龄段：</text>
+                        <van-radio name="1">小孩</van-radio>
+                        <van-radio name="2">青年</van-radio>
+                        <van-radio name="3">中年</van-radio>
+                    </van-radio-group>
+                </view>
+
+                <view style="margin: 24rpx;">
+                    <van-radio-group value="{{ radio }}" bind:change="onChange" direction="horizontal">
+                        <text>性别：</text>
+                        <van-radio name="1">男</van-radio>
+                        <van-radio name="2">女</van-radio>
+                    </van-radio-group>
+                </view>
+
+                <view>
+                    <van-field value="{{ fieldValue }}" is-link readonly label="语言" placeholder="请选择语言"
+                        bind:tap="onClick" />
+                    <van-popup show="{{ show }}" round position="bottom">
+                        <van-cascader wx:if="{{ show }}" value="{{ cascaderValue }}" title="请选择语言"
+                            options="{{ options }}" bind:close="onClose" bind:finish="onFinish" />
+                    </van-popup>
+                </view>
+
+            </view>
+            <van-cell-group inset wx:for="{{item.voices1}}" wx:for-item="itemName">
+                <view class="content">
+                    <view class="content-left">
+                        <i class="iconfont icon-kehufuwukefu"></i>
+                        <view>
+                            <view style="margin: 12rpx;">
+                                <text style="font-size: 40rpx; margin: 0 8rpx; color: #424141;">{{itemName.name}}</text>
+                                <text style="color: #8a746f; margin: 0 8rpx;">[字幕精准]</text>
+                            </view>
+                            <view style="margin: 12rpx;">
+                                <text
+                                    style="border: #aaaaaa 1rpx solid;margin: 0 8rpx;color: #aaaaaa;padding: 4rpx 8rpx;">阅读</text>
+                                <text
+                                    style="border: #aaaaaa 1rpx solid;margin: 0 8rpx;color: #aaaaaa;padding: 4rpx 8rpx;">解说</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="content-right">
+                        <i class="iconfont icon-shengboyuyinxiaoxi"></i>
+                        <i class="iconfont icon-yinliang"></i>
+                    </view>
+                </view>
+            </van-cell-group>
+        </van-tab>
+    </van-tabs>
+</view>

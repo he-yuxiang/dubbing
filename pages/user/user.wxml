@@ -1,0 +1,86 @@
+<view class="main">
+    <view class="header">
+        <image src="../../static/images/touxiang.jpg" />
+        <view class="user-info">
+            <view>Anonymous</view>
+            <view><i class="iconfont icon-xinfeng1"></i> -</view>
+            <view><i class="iconfont icon-zuanshi_o"></i> 0</view>
+        </view>
+    </view>
+    <view class="sign-in">
+        <van-cell>
+            <view slot="title" class="sign-content">
+                <view class="sign-left">
+                    <i class="iconfont icon-qiandao"></i>
+                    <view>
+                        <view class="van-cell-text">签到</view>
+                        <view style="color: #a4a4a7; font-size: 26rpx;">签到即可获取0积分</view>
+                    </view>
+                </view>
+                <view class="sign-right">
+                    <van-radio-group value="{{ radio }}" bind:change="onChange">
+                        <van-radio name="1" shape="square" checked-color="#4eaf50"></van-radio>
+                    </van-radio-group>
+                </view>
+            </view>
+        </van-cell>
+    </view>
+    <view class="sign-in">
+        <van-cell is-link center>
+            <view slot="title" class="sign-content">
+                <view class="sign-left">
+                    <i class="iconfont icon-zuanshi_o"></i>
+                    <view>
+                        <view class="van-cell-text">订阅</view>
+                        <view style="color: #a4a4a7; font-size: 26rpx;">免费用户</view>
+                    </view>
+                </view>
+            </view>
+        </van-cell>
+        <van-cell is-link center>
+            <view slot="title" class="sign-content" style="height:96rpx;">
+                <view class="sign-left">
+                    <i class="iconfont icon-duoyuyan"></i>
+                    <view>
+                        <view class="van-cell-text">语言（中文）</view>
+                    </view>
+                </view>
+            </view>
+        </van-cell>
+        <van-cell>
+            <view slot="title" class="sign-content" style="height:96rpx;">
+                <view class="sign-left">
+                    <i class="iconfont icon-taiyang"></i>
+                    <view>
+                        <view class="van-cell-text">主题</view>
+                    </view>
+                </view>
+                <view class="sign-right">
+                    <van-switch checked="{{ checked }}" bind:change="onChange" size="36rpx" />
+                </view>
+            </view>
+        </van-cell>
+    </view>
+    <view class="sign-in">
+        <van-cell is-link center>
+            <view slot="title" class="sign-content" style="height:96rpx;">
+                <view class="sign-left">
+                    <i class="iconfont icon-yinsixieyi"></i>
+                    <view>
+                        <view class="van-cell-text">隐私政策</view>
+                    </view>
+                </view>
+            </view>
+        </van-cell>
+        <van-cell is-link center>
+            <view slot="title" class="sign-content" style="height:96rpx;">
+                <view class="sign-left">
+                    <i class="iconfont icon-zhuxiao"></i>
+                    <view>
+                        <view class="van-cell-text">注销</view>
+                    </view>
+                </view>
+            </view>
+        </van-cell>
+    </view>
+</view>

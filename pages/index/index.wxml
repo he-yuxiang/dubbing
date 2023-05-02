@@ -1,0 +1,69 @@
+<!--index.wxml-->
+<view class="main">
+    <view class="content">
+        <van-cell-group class="text">
+            <van-field type="textarea" model:value="{{ value }}" placeholder="请在此输入文本" show-word-limit
+                autosize="{{size}}" maxlength="5000" />
+        </van-cell-group>
+        <view class="content-btn">
+            <van-button type="primary" size="small">复制全文</van-button>
+            <van-button type="primary" size="small">粘贴文字</van-button>
+            <van-button type="primary" size="small">清空全文</van-button>
+        </view>
+    </view>
+    <view class="title"><text>配音设置</text></view>
+    <view class="install">
+        <view class="install-list" bindtap="toSet">
+            <i class="iconfont icon-dianboxindiantu"></i>
+            <text style="margin-top: 8rpx;">音高:10</text>
+        </view>
+        <view class="install-list" bindtap="toSet">
+            <i class="iconfont icon-yinliang"></i>
+            <text style="margin-top: 8rpx;">音量:10</text>
+        </view>
+        <view class="install-list" bindtap="toSetDubbing">
+            <i class="iconfont icon-kehufuwukefu"></i>
+            <text style="margin-top: 8rpx;">配音选择</text>
+        </view>
+        <view class="install-list" bindtap="toSet">
+            <i class="iconfont icon-yibiaopan"></i>
+            <text style="margin-top: 8rpx;">语速</text>
+        </view>
+        <view class="install-list" bindtap="toSet">
+            <i class="iconfont icon-shenglvehao"></i>
+            <text style="margin-top: 8rpx;">其他</text>
+        </view>
+    </view>
+    <view class="fooer-btn">
+        <van-button plain type="primary" round>
+            <i class="iconfont icon-daochu"></i> 导出
+        </van-button>
+        <van-button type="primary" round>
+            <i class="iconfont icon-shengboyuyinxiaoxi"></i>生成语音
+        </van-button>
+    </view>
+    <view>
+        <van-action-sheet show="{{ show }}" title="配音设置" cancel-text="完成" bind:cancel="exitSet">
+            <view class="set">
+                <text style="margin: 0 12rpx;">音量</text>
+                <view style="width: 80%; margin: 0 12rpx;">
+                    <van-slider value="50" bind:change="onChange" />
+                </view>
+            </view>
+            <van-divider />
+            <view class="set">
+                <text style="margin: 0 12rpx;">音高</text>
+                <view style="width: 80%; margin: 0 12rpx;">
+                    <van-slider value="50" bind:change="onChange" />
+                </view>
+            </view>
+            <van-divider />
+            <view class="set">
+                <text style="margin: 0 12rpx;">语速</text>
+                <view style="width: 80%; margin: 0 12rpx;">
+                    <van-slider value="50" bind:change="onChange" />
+                </view>
+            </view>
+        </van-action-sheet>
+    </view>
+</view>

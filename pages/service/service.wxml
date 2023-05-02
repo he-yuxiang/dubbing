@@ -1,0 +1,118 @@
+<!--pages/service/service.wxml-->
+<view class="main">
+    <view class="title">
+        <i class="iconfont icon-luyin" style="font-size: 24rpx;"></i>
+        <text style="margin-left: 24rpx;">音频增值服务</text>
+    </view>
+    <view style="margin: 24rpx 0;">
+        <van-grid column-num="2" gutter="12">
+            <van-grid-item use-slot>
+                <view class="voices-content">
+                    <i class="iconfont icon-yinliang"></i>
+                    <view>
+                        <view style="margin: 12rpx;">音量调节</view>
+                        <view style="font-size: 24rpx; color: #a3a4a6;margin:0 12rpx;">放大、缩小音量</view>
+                    </view>
+                </view>
+            </van-grid-item>
+            <van-grid-item use-slot>
+                <view class="voices-content">
+                    <i class="iconfont icon-yinliang"></i>
+                    <view>
+                        <view style="margin: 12rpx;">格式转换</view>
+                        <view style="font-size: 24rpx; color: #a3a4a6;margin:0 12rpx;">调节格式</view>
+                    </view>
+                </view>
+            </van-grid-item>
+            <van-grid-item use-slot>
+                <view class="voices-content">
+                    <i class="iconfont icon-yinliang"></i>
+                    <view>
+                        <view style="margin: 12rpx;">语音拼接</view>
+                        <view style="font-size: 24rpx; color: #a3a4a6;margin:0 12rpx;">拼接音频</view>
+                    </view>
+                </view>
+            </van-grid-item>
+            <van-grid-item use-slot>
+                <view class="voices-content">
+                    <i class="iconfont icon-yinliang"></i>
+                    <view>
+                        <view style="margin: 12rpx;">缩短停顿</view>
+                        <view style="font-size: 24rpx; color: #a3a4a6;margin:0 12rpx;">缩短音频停顿</view>
+                    </view>
+                </view>
+            </van-grid-item>
+            <van-grid-item use-slot>
+                <view class="voices-content">
+                    <i class="iconfont icon-yinliang"></i>
+                    <view>
+                        <view style="margin: 12rpx;">音效</view>
+                        <view style="font-size: 24rpx; color: #a3a4a6;margin:0 12rpx;">免费无版权音效</view>
+                    </view>
+                </view>
+            </van-grid-item>
+            <van-grid-item use-slot>
+                <view class="voices-content">
+                    <i class="iconfont icon-yinliang"></i>
+                    <view>
+                        <view style="margin: 12rpx;">背景音乐</view>
+                        <view style="font-size: 24rpx; color: #a3a4a6;margin:0 12rpx;">免费无版权背景</view>
+                    </view>
+                </view>
+            </van-grid-item>
+        </van-grid>
+
+    </view>
+    <view class="title">
+        <i class="iconfont icon-luyin" style="font-size: 24rpx;"></i>
+        <text style="margin-left: 24rpx;">文本服务</text>
+    </view>
+    <view style="margin: 24rpx 0;">
+        <van-grid column-num="2" gutter="12">
+            <van-grid-item use-slot>
+                <view class="voices-content">
+                    <i class="iconfont icon-yinliang"></i>
+                    <view>
+                        <view style="margin: 12rpx;">拍照识字</view>
+                        <view style="font-size: 24rpx; color: #a3a4a6;margin:0 12rpx;">提取文字</view>
+                    </view>
+                </view>
+            </van-grid-item>
+            <van-grid-item use-slot>
+                <view class="voices-content">
+                    <i class="iconfont icon-yinliang"></i>
+                    <view>
+                        <view style="margin: 12rpx;">文案提取</view>
+                        <view style="font-size: 24rpx; color: #a3a4a6;margin:0 12rpx;">语音视频转文字</view>
+                    </view>
+                </view>
+            </van-grid-item>
+        </van-grid>
+    </view>
+    <view class="title">
+        <i class="iconfont icon-luyin" style="font-size: 24rpx;"></i>
+        <text style="margin-left: 24rpx;">模式</text>
+    </view>
+    <view style="margin: 24rpx 0;">
+        <van-grid column-num="2" gutter="12">
+            <van-grid-item use-slot>
+                <view class="voices-content">
+                    <i class="iconfont icon-yinliang"></i>
+                    <view>
+                        <view style="margin: 12rpx;">对话模式</view>
+                        <view style="font-size: 24rpx; color: #a3a4a6;margin:0 12rpx;">聊天对话</view>
+                    </view>
+                </view>
+            </van-grid-item>
+            <van-grid-item use-slot>
+                <view class="voices-content">
+                    <i class="iconfont icon-yinliang"></i>
+                    <view>
+                        <view style="margin: 12rpx;">专业模式</view>
+                        <view style="font-size: 24rpx; color: #a3a4a6;margin:0 12rpx;">放大、缩小音量</view>
+                    </view>
+                </view>
+            </van-grid-item>
+        </van-grid>
+    </view>
+</view>
