@@ -1,11 +1,12 @@
 // pages/setDubbing/setDubbing.js
+import api from '../../api/api.js'
 const options = [
     {
-        text: '汉语',
-        value: '330000',
+        text: '中文',
+        value: 'zh_CN',
         children: [
-            { text: '普通话', value: '330100' },
-            { text: '四川方言', value: '330200' },
+            { text: '普通话', value: 'zh_CN/putonghua' },
+            { text: '四川方言', value: 'zh_CN/sichuanhua' },
             { text: '东北方言', value: '330300' },
             { text: '台湾方言', value: '330400' },
             { text: '粤语', value: '330500' },
@@ -13,11 +14,11 @@ const options = [
     },
     {
         text: '外语',
-        value: '320000',
+        value: 'en_waiyu',
         children: [
-            { text: '英语', value: '320100' },
-            { text: '德语', value: '320200' },
-            { text: '日语', value: '320300' },
+            { text: '英文', value: 'en_US' },
+            { text: '日语', value: 'ja_JP' },
+            { text: '德语', value: '320300' },
             { text: '韩语', value: '320400' },
         ],
     },
@@ -124,34 +125,129 @@ Page({
         options,
         fieldValue: '',
         cascaderValue: '',
+        configs: {},
+        title: 'myvoice',
+        setAge: '',
+        setGender: '',
+        radio: '',
+        filter: {
+            agegroup: {
+                "name": "年龄段",
+                children: [
+                    {
+                        "name": "童声",
+                        "code": "children"
+                    },
+                    {
+                        "name": "青年",
+                        "code": "youth"
+                    },
+                    {
+                        "name": "中年",
+                        "code": "middle_age"
+                    }
+                ]
+            },
+            gender: {
+                name: "性别",
+                children: [
+                    {
+                        "name": "男",
+                        "code": "male"
+                    },
+                    {
+                        "name": "女",
+                        "code": "female"
+                    },
+                    {
+                        "name": "中性",
+                        "code": "neutral"
+                    }
+                ]
+            },
+            language: {
+                name: "语言",
+                children: [
+                    {
+                        "name": "中文",
+                        "code": "zh_CN",
+                        children: [
+                            {
+                                "name": "普通话",
+                                "code": "zh_CN/putonghua"
+                            },
+                            {
+                                "name": "四川话",
+                                "code": "zh_CN/sichuanhua"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "英文",
+                        "code": "en_US"
+                    },
+                    {
+                        "name": "日语",
+                        "code": "ja_JP"
+                    }
+                ]
+            }
+        },
+        all: [],
+        myvoice: []
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
+        this.getConfigs()
 
     },
-    onChange(event) {
+    async getConfigs() {
+        let token = wx.getStorageSync('token')
+        let result = await api('/system/configs', 'GET', null, token)
+        this.setData({
+            configs: result[4],
+            all: result[4].value.all,
+            myvoice: result[4].value.myvoice
+        })
+    },
+    titleOnChange(event) {
         wx.showToast({
             title: `切换到标签 ${event.detail.name}`,
             icon: 'none',
         });
-    },
-    onChange1(e) {
-        const { value } = e.detail;
-        if (value === this.data.options[0].value) {
-            setTimeout(() => {
-                const children = [
-                    { text: '杭州市', value: '330100' },
-                    { text: '宁波市', value: '330200' },
-                ];
-                this.setData({
-                    'options[0].children': children,
-                })
-            }, 500);
+        if (event.detail.title === '收藏') {
+            this.setData({
+                title: 'myvoice'
+            })
+        } else if (event.detail.title === '全部') {
+            this.setData({
+                title: 'all'
+            })
         }
     },
+    setAgeChange(event) {
+        let newAgegroup = this.data.configs.value.all.filter((item) => {
+            return item.age_group.code == event.detail & item.gender.code == this.data.setGender & item.language.code == this.data.cascaderValue
+        })
+        this.setData({
+            all: newAgegroup,
+            setAge: event.detail
+        })
+    },
+    setGenderChange(event) {
+        let newAgegroup = this.data.configs.value.all.filter((item) => {
+            return item.gender.code == event.detail & item.age_group.code == this.data.setAge & item.language.code == this.data.cascaderValue
+        })
+        this.setData({
+            all: newAgegroup,
+            setGender: event.detail
+        })
+
+    },
+
     onClick() {
         this.setData({
             show: true,
@@ -172,6 +268,13 @@ Page({
         this.setData({
             fieldValue,
             cascaderValue: value,
+            show: false
+        })
+        let newAgegroup = this.data.configs.value.all.filter((item) => {
+            return item.language.code == value & item.gender.code == this.data.setGender & item.age_group.code == this.data.setAge
+        })
+        this.setData({
+            all: newAgegroup,
         })
     },
     /**

@@ -1,9 +1,9 @@
 {
     "pages": [
-        "pages/setDubbing/setDubbing",
+        "pages/user/user",
         "pages/service/service",
         "pages/index/index",
-        "pages/user/user"
+        "pages/setDubbing/setDubbing"
     ],
     "window": {
         "backgroundTextStyle": "light",

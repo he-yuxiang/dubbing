@@ -30,8 +30,16 @@ App({
     onShow() {
         wx.login({
             success: async (res) => {
-                let result = await api('/login', 'POST', res.code)
-                console.log(result);
+                let code = res.code
+                try {
+                    let result = await api('/auth/login', 'POST', { code })
+                    wx.setStorageSync('openid', result.openid)
+                    wx.setStorageSync('token', result.token)
+                } catch (error) {
+
+                }
+
+
             }
         })
     },

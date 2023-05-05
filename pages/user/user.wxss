@@ -44,6 +44,11 @@ page {
     margin: 0 24rpx 0 0;
 }
 
+.sign-left .icon-daochu {
+    color: #4eaf50;
+    margin: 0 24rpx 0 0;
+}
+
 .sign-left .icon-zuanshi_o {
     color: #7956e8;
     margin: 0 24rpx 0 0;

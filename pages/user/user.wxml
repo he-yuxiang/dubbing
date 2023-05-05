@@ -2,9 +2,10 @@
     <view class="header">
         <image src="../../static/images/touxiang.jpg" />
         <view class="user-info">
-            <view>Anonymous</view>
+            <view>{{userInfo.nick}}</view>
             <view><i class="iconfont icon-xinfeng1"></i> -</view>
-            <view><i class="iconfont icon-zuanshi_o"></i> 0</view>
+            <view><i class="iconfont icon-zuanshi_o"></i>
+                {{userInfo.subscription.used_credits}} / {{userInfo.subscription.max_credits}}</view>
         </view>
     </view>
     <view class="sign-in">
@@ -14,13 +15,32 @@
                     <i class="iconfont icon-qiandao"></i>
                     <view>
                         <view class="van-cell-text">签到</view>
-                        <view style="color: #a4a4a7; font-size: 26rpx;">签到即可获取0积分</view>
+                        <view style="color: #a4a4a7; font-size: 26rpx;">签到即可获取{{configs[1].value}}积分</view>
                     </view>
                 </view>
                 <view class="sign-right">
-                    <van-radio-group value="{{ radio }}" bind:change="onChange">
-                        <van-radio name="1" shape="square" checked-color="#4eaf50"></van-radio>
+                    <van-radio-group value="{{ userInfo.is_check_in }}" bind:change="onChangeCheckIn"
+                        wx:if="{{showChange}}" disabled="{{userInfo.is_check_in}}">
+                        <van-radio name="{{true}}" shape="square" checked-color="#4eaf50"></van-radio>
                     </van-radio-group>
+                    <van-loading wx:else />
+                    <van-toast id="van-toast" />
+                </view>
+            </view>
+        </van-cell>
+        <van-cell>
+            <view slot="title" class="sign-content">
+                <view class="sign-left">
+                    <i class="iconfont icon-daochu"></i>
+                    <view>
+                        <view class="van-cell-text">分享</view>
+                        <view style="color: #a4a4a7; font-size: 26rpx;">分享新用户可获取{{configs[2].value}}积分</view>
+                    </view>
+                </view>
+                <view class="sign-right">
+                    <van-button plain type="primary" icon="share-o" size="small" bindtap="share"
+                        open-type="share">分享</van-button>
+
                 </view>
             </view>
         </van-cell>
